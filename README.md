@@ -7,7 +7,9 @@ Thin wrapper over npm [`mmdb-lib`](https://www.npmjs.com/package/mmdb-lib), repa
 
 Under the hood this package includes browser-compatible Buffer implementation and shims some of the Node.js APIs used by the library.
 
-## Usage
+<p align="center">✌️ Check out <a href="https://github.com/nilfalse/ctf">github.com/nilfalse/ctf</a> for real-world usage.</p>
+
+## ✨ Usage
 
 ```typescript
 import { Reader } from 'https://esm.run/libmaxmind';
@@ -24,11 +26,11 @@ reader.get('89.160.20.122');
 
 Apart from `ArrayBuffer` support the rest of API is left intact.
 
-## Credits
+## 👏 Credits
 
 - https://www.npmjs.com/package/buffer
 - https://www.npmjs.com/package/mmdb-lib
 
-## License
+## ⚖ License
 
 MIT
