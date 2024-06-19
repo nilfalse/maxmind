@@ -1,11 +1,11 @@
 {
   "name": "libmaxmind",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "tsc --pretty && webpack",
     "test": "tsc --project test/ --pretty && node test/*.js",
     "pretest": "ln -vf index.mjs test && ln -vf index.d.mts test",
-    "postinstall": "cd test && wget -O GeoLite2-Country-Test.mmdb 'https://raw.githubusercontent.com/maxmind/MaxMind-DB/main/test-data/GeoLite2-Country-Test.mmdb'"
+    "prepare": "cd test && wget -O GeoLite2-Country-Test.mmdb 'https://raw.githubusercontent.com/maxmind/MaxMind-DB/main/test-data/GeoLite2-Country-Test.mmdb'"
   },
   "dependencies": {
     "mmdb-lib": "^2.1.1"
