@@ -1,6 +1,6 @@
 {
   "name": "libmaxmind",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "build": "tsc --pretty && webpack",
     "test": "tsc --project test/ --pretty && node test/*.js",
