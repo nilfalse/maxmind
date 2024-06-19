@@ -1,0 +1,6 @@
+node_modules/
+*.js
+index.mjs
+test/*.mjs
+*.d.mts
+*.mmdb

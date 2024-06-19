@@ -1,0 +1,40 @@
+{
+  "name": "libmaxmind",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc --pretty && webpack",
+    "test": "tsc --project test/ --pretty && node test/*.js",
+    "pretest": "ln -vf index.mjs test && ln -vf index.d.mts test",
+    "postinstall": "cd test && wget -O GeoLite2-Country-Test.mmdb 'https://raw.githubusercontent.com/maxmind/MaxMind-DB/main/test-data/GeoLite2-Country-Test.mmdb'"
+  },
+  "dependencies": {
+    "mmdb-lib": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "buffer": "^6.0.3",
+    "typescript": "^5.4",
+    "webpack-cli": "^5.1"
+  },
+  "type": "module",
+  "types": "index.d.mts",
+  "files": [
+    "index.d.mts",
+    "index.mjs"
+  ],
+  "keywords": [
+    "maxmind",
+    "geoip",
+    "geoip2",
+    "geoip2-lite"
+  ],
+  "author": "nilfalse.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nilfalse/maxmind.git"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "license": "MIT"
+}
