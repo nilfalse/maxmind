@@ -1,5 +1,7 @@
 # libmaxmind
 
+[![Depfu](https://badges.depfu.com/badges/9640c46179da71fe6c4edcba55f7c863/overview.svg)](https://depfu.com/github/nilfalse/maxmind?project_id=40733)
+
 Thin wrapper over npm [`mmdb-lib`](https://www.npmjs.com/package/mmdb-lib), repackaged for direct use in browsers.
 
 > [!IMPORTANT]  
@@ -11,7 +13,7 @@ Under the hood this package includes browser-compatible Buffer implementation an
 
 ## ✨ Usage
 
-```typescript
+```javascript
 import { Reader } from 'https://esm.run/libmaxmind';
 
 const response = await fetch(

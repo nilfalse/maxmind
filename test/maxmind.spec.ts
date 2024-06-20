@@ -3,7 +3,7 @@ import { before, describe, it } from 'node:test';
 import fs from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
-import * as maxmind from './index.mjs';
+import * as maxmind from '../index.mjs';
 
 describe('maxmind', () => {
   let arrayBuffer: ArrayBuffer;

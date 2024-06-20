@@ -4,7 +4,6 @@
   "scripts": {
     "build": "tsc --pretty && webpack",
     "test": "tsc --project test/ --pretty && node test/*.js",
-    "pretest": "ln -vf index.mjs test && ln -vf index.d.mts test",
     "prepare": "cd test && wget -O GeoLite2-Country-Test.mmdb 'https://raw.githubusercontent.com/maxmind/MaxMind-DB/main/test-data/GeoLite2-Country-Test.mmdb'"
   },
   "dependencies": {
@@ -13,8 +12,11 @@
   "devDependencies": {
     "@types/node": "^20",
     "buffer": "^6.0.3",
-    "typescript": "^5.4",
+    "typescript": "^5.5",
     "webpack-cli": "^5.1"
+  },
+  "engines": {
+    "node": ">=22.0"
   },
   "type": "module",
   "types": "index.d.mts",
