@@ -2,6 +2,8 @@
 name: CI
 
 on:
+  workflow_dispatch:
+
   pull_request:
 
   push:
@@ -22,10 +24,12 @@ jobs:
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version-file: 'package.json'
           registry-url: 'https://registry.npmjs.org'
 
       - name: 📦 Build
+        env:
+          FORCE_COLOR: 1
         run: |
           npm install
           npm run build
@@ -35,11 +39,14 @@ jobs:
         env:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          FORCE_COLOR: 1
         run: |
+          npm run build
+
           if [[ ${{ github.event_name }} == 'pull_request' ]] ||
              [[ $(npm view libmaxmind version) == $(node -p "require('./package.json').version") ]]
           then
-            echo -e "\e[1;34mDRY RUN\e[0m"
+            echo -e "\e[1;34mDRY RUN\e[0m\n"
             npm pack --dry-run
           else
             npm publish --provenance --access public

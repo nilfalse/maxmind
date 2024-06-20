@@ -10,6 +10,8 @@
     "declaration": true,
 
     "strict": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+
+    "composite": true
   }
 }

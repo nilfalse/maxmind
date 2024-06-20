@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+
+      - name: 📃 Bump
+        run: |
+          if [ "${{ github.event_name }}" == "release" ]; then
+            if [ "${{ github.event.action }}" == "published" ]; then
+              npm version "${{ github.event.release.tag_name }}" --force
+            fi
+          fi
+
+      - name: 🚀 Push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit --all --message="Bump version to ${{ github.event.release.tag_name }}"
+          git push origin

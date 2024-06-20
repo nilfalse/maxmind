@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
 
-  "include": ["*.ts"],
+  "include": ["*.spec.ts"],
 
   "compilerOptions": {
     "target": "ESNext",
@@ -11,5 +11,7 @@
 
     "strict": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+
+  "references": [{ "path": ".." }]
 }
