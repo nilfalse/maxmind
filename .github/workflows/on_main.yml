@@ -2,6 +2,8 @@
 name: CI
 
 on:
+  pull_request:
+
   push:
     branches: [main]
 
@@ -34,5 +36,11 @@ jobs:
           NODE_ENV: production
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm run build
-          npm publish --provenance --access public
+          if [[ ${{ github.event_name }} == 'pull_request' ]] ||
+             [[ $(npm view libmaxmind version) == $(node -p "require('./package.json').version") ]]
+          then
+            echo -e "\e[1;34mDRY RUN\e[0m"
+            npm pack --dry-run
+          else
+            npm publish --provenance --access public
+          fi
