@@ -1,7 +1,7 @@
 {
   "name": "libmaxmind",
   "description": "Thin wrapper over npm mmdb-lib, repackaged for direct use in browsers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "build": "tsc --pretty && webpack",
     "test": "tsc --project test/ --pretty && node test/*.js",
