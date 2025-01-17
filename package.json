@@ -11,10 +11,10 @@
     "mmdb-lib": "^2.1.1"
   },
   "devDependencies": {
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.5",
     "buffer": "^6.0.3",
     "typescript": "^5.5",
-    "webpack-cli": "^5.1"
+    "webpack-cli": "^6.0.1"
   },
   "engines": {
     "node": ">=22.0"
