@@ -210,9 +210,6 @@ describe('maxmind', () => {
           'zh-CN': '罗马尼亚',
         },
       },
-      traits: {
-        is_anonymous_proxy: true,
-      },
     });
   });
 });

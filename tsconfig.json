@@ -5,8 +5,9 @@
 
   "compilerOptions": {
     "target": "ESNext",
-    "module": "Preserve",
-    "types": [],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
     "declaration": true,
 
     "strict": true,

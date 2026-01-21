@@ -32,16 +32,15 @@ jobs:
           FORCE_COLOR: 1
         run: |
           npm install
-          npm run build
-          npm test
+          make build
+          make test
 
       - name: 🚀 Publish
         env:
           NODE_ENV: production
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           FORCE_COLOR: 1
         run: |
-          npm run build
+          make build
 
           if [[ ${{ github.event_name }} == 'pull_request' ]] ||
              [[ $(npm view libmaxmind version) == $(node -p "require('./package.json').version") ]]
