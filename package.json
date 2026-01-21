@@ -1,7 +1,7 @@
 {
   "name": "libmaxmind",
   "description": "Thin wrapper over npm mmdb-lib, repackaged for direct use in browsers",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "scripts": {
     "prepare": "cd test && wget -O GeoLite2-Country-Test.mmdb 'https://raw.githubusercontent.com/maxmind/MaxMind-DB/main/test-data/GeoLite2-Country-Test.mmdb'"
   },
