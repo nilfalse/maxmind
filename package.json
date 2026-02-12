@@ -9,7 +9,7 @@
     "mmdb-lib": "^3.0.2"
   },
   "devDependencies": {
-    "@types/node": "^25.0.3",
+    "@types/node": "^25.0.9",
     "buffer": "^6.0.3",
     "typescript": "^5.9",
     "webpack-cli": "^6.0.1"
