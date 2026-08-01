@@ -1,7 +1,0 @@
-node_modules/
-*.tsbuildinfo
-*.js
-index.mjs
-test/*.mjs
-*.d.mts
-*.mmdb

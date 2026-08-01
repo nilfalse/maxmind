@@ -1,43 +1,10 @@
 {
   "name": "libmaxmind",
-  "description": "Thin wrapper over npm mmdb-lib, repackaged for direct use in browsers",
-  "version": "1.1.0",
-  "scripts": {
-    "prepare": "cd test && wget -O GeoLite2-Country-Test.mmdb 'https://raw.githubusercontent.com/maxmind/MaxMind-DB/main/test-data/GeoLite2-Country-Test.mmdb'"
-  },
-  "dependencies": {
-    "mmdb-lib": "^3.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "^25.2.3",
-    "buffer": "^6.0.3",
-    "typescript": "^5.9",
-    "webpack-cli": "^6.0.1"
-  },
-  "engines": {
-    "node": ">=24.0"
-  },
+  "description": "DEPRECATED",
+  "version": "1.1.1",
   "type": "module",
-  "types": "index.d.mts",
   "module": "index.mjs",
   "files": [
-    "index.d.mts",
     "index.mjs"
-  ],
-  "keywords": [
-    "maxmind",
-    "browsers",
-    "geoip",
-    "geoip2",
-    "geoip2-lite"
-  ],
-  "author": "nilfalse.com",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nilfalse/maxmind.git"
-  },
-  "prettier": {
-    "singleQuote": true
-  },
-  "license": "MIT"
+  ]
 }

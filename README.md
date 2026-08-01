@@ -1,38 +1,27 @@
-# libmaxmind
+# DEPRECATED
 
 [![Depfu](https://badges.depfu.com/badges/9640c46179da71fe6c4edcba55f7c863/overview.svg)](https://depfu.com/github/nilfalse/maxmind?project_id=40733)
 
-Thin wrapper over npm [`mmdb-lib`](https://www.npmjs.com/package/mmdb-lib), repackaged for direct use in browsers.
+> [!CAUTION]  
+> This library is deprecated.
 
-> [!IMPORTANT]  
-> `Reader` class is enhanced with `ArrayBuffer` support.
+<p align="center">Use "mmdb-lib" directly instead.</p>
 
-Under the hood this package includes browser-compatible Buffer implementation and shims some of the Node.js APIs used by the library.
-
-<p align="center">✌️ Check out <a href="https://github.com/nilfalse/ctf">github.com/nilfalse/ctf</a> for real-world usage.</p>
+The code below [works in a browser](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#importing_modules_using_import_maps) - no transpilation needed. Just wrap it in `<script type="module">...</script>` and drop it as is in your HTML.
 
 ## ✨ Usage
 
 ```javascript
-import { Reader } from 'https://esm.run/libmaxmind';
+import { Buffer } from 'https://esm.run/buffer';
+import { Reader } from 'https://esm.run/mmdb-lib';
 
 const response = await fetch(
-  'https://raw.githubusercontent.com/maxmind/MaxMind-DB/main/test-data/GeoLite2-Country-Test.mmdb'
+  'https://raw.githubusercontent.com/maxmind/MaxMind-DB/main/test-data/GeoLite2-Country-Test.mmdb',
 );
 
-const arrayBuffer = await response.arrayBuffer();
-const reader = new Reader(arrayBuffer);
+const buffer = Buffer.from(await response.arrayBuffer());
 
-reader.get('89.160.20.122');
+const reader = new Reader(buffer);
+
+console.log(reader.get('89.160.20.122'));
 ```
-
-Apart from `ArrayBuffer` support the rest of API is left intact.
-
-## 👏 Credits
-
-- https://www.npmjs.com/package/buffer
-- https://www.npmjs.com/package/mmdb-lib
-
-## ⚖ License
-
-MIT
